@@ -31,6 +31,26 @@ public class CirculoTest {
 		
 		assertEquals(consoleOutput,out.toString());
 	}
+        //Caso de uso r=3
+    @Test
+	public void mainTestInput3() {
+		String input="3\n";
+		ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(out));
+		
+		String[] args= {};
+		Circulo.main(args);
+		//(expected) output
+		String consoleOutput="Introduzca el radio: "+ System.getProperty("line.separator");
+		consoleOutput += "Circulo con radio 3.0,"+ System.getProperty("line.separator");
+		consoleOutput += " la circunferencia es 18.84955592153876"+ System.getProperty("line.separator");
+		consoleOutput += " y el area es 28.274333882308138."+ System.getProperty("line.separator");
+		
+		assertEquals(consoleOutput,out.toString());
+	}    
     //Caso de uso r=5
     @Test
 	public void mainTestInput5() {
@@ -53,8 +73,8 @@ public class CirculoTest {
 	}    
     //Caso de uso r=-1
     @Test
-	public void mainTestInput1n() {
-		String input="-1\n";
+	public void mainTestInput0() {
+		String input="0\n";
 		ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		
